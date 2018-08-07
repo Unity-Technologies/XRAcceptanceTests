@@ -1,0 +1,18 @@
+syntax: glob
+
+.vs/
+Builds/
+Library/
+Temp/
+bin/
+obj/
+*.csproj
+*.user
+*.sln
+*.suo
+*.orig
+*.orig.meta
+*.preformat.bak
+*.preformat.bak.meta
+Assets/Resources/TestAttributes.*
+Assets/Resources/PlayerSettings.*

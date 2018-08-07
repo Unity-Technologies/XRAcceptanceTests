@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MaterialTest/MaterialTest.unity
+    guid: 2ac1fe7a552ab304c9df224f5969dd41
+  - enabled: 1
+    path: Assets/Scenes/LightingTest/BakedLighting/BakedLighting.unity
+    guid: c431ebb404895f843b5b00524a1b0ae3
+  - enabled: 1
+    path: Assets/Scenes/LightingTest/RealtimeLighting/RealtimeLighting.unity
+    guid: e5ad5d1a62efb224ca028cddac95a49c
+  - enabled: 1
+    path: Assets/Scenes/EffectTest/EffectTest.unity
+    guid: ff97ddddc5cb2614fb34ea5c5345914a
+  - enabled: 1
+    path: Assets/Scenes/TerrainTest/TerrainTest.unity
+    guid: e7bcad52ea436de4a8d0c0b984ffcd01
+  - enabled: 1
+    path: Assets/Scenes/CanvasTest/CanvasTest.unity
+    guid: f0c77c4076271e84ab9e4de36245e2fe
+  - enabled: 1
+    path: Assets/Scenes/APICheckTest/APICheckTest.unity
+    guid: 9d50340ba7f4e0b4a9a7768d8870f44d
+  - enabled: 1
+    path: Assets/Scenes/PerformanceTest/PerformanceTest.unity
+    guid: dbbfe3d4e43ee2b419ed8114843e2375
+  - enabled: 1
+    path: Assets/Scenes/InputRegressionTest/InputRegressionTest.unity
+    guid: d2e19aec385c9284aa61de3cea3bbce3
+  m_configObjects: {}
