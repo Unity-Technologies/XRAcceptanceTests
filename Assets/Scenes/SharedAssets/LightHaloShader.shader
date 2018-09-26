@@ -1,6 +1,4 @@
-﻿// Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
-
-Shader "Custom/LightHalo" {
+﻿Shader "Custom/LightHalo" {
 	Properties{
 		_TintColor("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 		_MainTex("Particle Texture", 2D) = "white" {}
@@ -78,7 +76,7 @@ Shader "Custom/LightHalo" {
 #endif
 
 	fixed4 col = 2.0f * i.color * _TintColor * tex2D(_MainTex, i.texcoord);
-	UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0)); // fog towards black due to our blend mode
+	UNITY_APPLY_FOG_COLOR(i.fogCoord, col, fixed4(0,0,0,0)); 
 	return col;
 	}
 		ENDCG
