@@ -5,8 +5,9 @@ using UnityEngine.Serialization;
 
 public class RealtimeLight : MonoBehaviour {
     public new Light light { get; private set; }
-    public Mesh textMesh;
+    //public Mesh textMesh;
     public Billboard lightHalo { get; private set; }
+    public GameObject text;
     private Material m_LightHaloMaterial;
 
     public float maxIntensity { get; private set; }
@@ -14,6 +15,30 @@ public class RealtimeLight : MonoBehaviour {
     public float intensity = 0.0f;
 
     private Color m_PoseHaloColor;
+
+    private void OnDisable()
+    {
+        if(text != null)
+        {
+            text.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if(text != null)
+        {
+            text.SetActive(true);
+        }
+    }
+
+    public void SetLocalRotation(Quaternion rotation)
+    {
+        if(text != null)
+        {
+            text.transform.localRotation = rotation;
+        }
+    }
 
     //SetIntensity between 0 and 1
     public void SetIntensity(float factor)
@@ -30,7 +55,7 @@ public class RealtimeLight : MonoBehaviour {
         }
         intensity = factor;
     }
-    
+   
     void Start()
     {
         light = GetComponentInChildren<Light>();

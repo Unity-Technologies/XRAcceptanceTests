@@ -8,8 +8,7 @@ public class RealtimeLighting : MonoBehaviour {
     public float fadeDuration = 0.5f;
     public float idleDuration = 2.0f;
     public Orbit orbit;
-    public MeshFilter labelMeshFilter;
-
+    
     private IEnumerator Fade(float direction, RealtimeLight light)
     {
         
@@ -17,12 +16,7 @@ public class RealtimeLighting : MonoBehaviour {
         direction = Mathf.Sign(direction);
 
         light.SetIntensity(direction > 0f ? 0f : 1.0f);
-
-        if (labelMeshFilter != null)
-        {
-            labelMeshFilter.mesh = light.textMesh;
-        }
-
+        
         float timer = 0.0f;
         while(timer < fadeDuration)
         {
@@ -30,16 +24,13 @@ public class RealtimeLighting : MonoBehaviour {
 
             light.SetIntensity(direction > 0 ? t : (1.0f - t));
             
-            if(labelMeshFilter != null)
+            if (direction > 0f)
             {
-                if (direction > 0f)
-                {
-                    labelMeshFilter.transform.localRotation = Quaternion.AngleAxis(180.0f - t * 180.0f, Vector3.right);
-                }
-                else
-                {
-                    labelMeshFilter.transform.localRotation = Quaternion.AngleAxis( 180.0f + (1.0f - t) * 180.0f , Vector3.right);
-                }
+                light.SetLocalRotation(Quaternion.AngleAxis(180.0f - t * 180.0f, Vector3.right));
+            }
+            else
+            {
+                light.SetLocalRotation(Quaternion.AngleAxis(180.0f + (1.0f - t) * 180.0f, Vector3.right));
             }
 
             timer += Time.deltaTime;
@@ -49,10 +40,8 @@ public class RealtimeLighting : MonoBehaviour {
         light.SetIntensity(direction > 0f ? 1f : 0.0f);
         light.gameObject.SetActive(false);
 
-        if(labelMeshFilter != null)
-        {
-            labelMeshFilter.transform.localRotation = direction > 0 ? Quaternion.AngleAxis(0.0f, Vector3.right) : Quaternion.AngleAxis(90.0f, Vector3.right);
-        }
+        light.SetLocalRotation(direction > 0 ? Quaternion.AngleAxis(0.0f, Vector3.right) : Quaternion.AngleAxis(90.0f, Vector3.right));
+        
     }
 
     private IEnumerator Idle(RealtimeLight light)
@@ -71,7 +60,7 @@ public class RealtimeLighting : MonoBehaviour {
         {
             realtimeLights[0].SetIntensity(1.0f);
         }
-
+        
         //Loop through lights
         if (realtimeLights.Length > 1)
         {
