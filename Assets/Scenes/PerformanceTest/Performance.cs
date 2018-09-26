@@ -8,12 +8,12 @@ using UnityEngine.VR;
 #endif
 
 public class Performance : MonoBehaviour {
-
-    public UnityEngine.UI.Text m_Text;
-    public float m_DeltaTime;
-    public int m_FrameCount = 0;
-    public float m_TotalGPUFrameTime = 0.0f;
-    public float m_RefreshFrequency = 0.5f;
+    
+    public UnityEngine.UI.Text textField;
+    private float m_DeltaTime;
+    private int m_FrameCount = 0;
+    private float m_TotalGPUFrameTime = 0.0f;
+    public float refreshFrequency = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class Performance : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (m_Text != null)
+        if (textField != null)
         {
             float gpuLastFrameTime = 0f;
             int droppedFrameCount = 0;
@@ -46,20 +46,20 @@ public class Performance : MonoBehaviour {
             using UnityEngine.VR;
 #endif
 
-            if(m_DeltaTime > m_RefreshFrequency)
+            if(m_DeltaTime > refreshFrequency)
             {
                 float fps = (float)m_FrameCount/m_DeltaTime;
                 m_TotalGPUFrameTime /= (float)m_FrameCount;
 
-                m_DeltaTime -= m_RefreshFrequency;
+                m_DeltaTime -= refreshFrequency;
                 output += "fps: " + fps.ToString("F1");
                 output += "\ngpuTimeLastFrame: " + m_TotalGPUFrameTime.ToString("F1");
                 output += "\ndroppedFrameCount: " + droppedFrameCount.ToString();
                 output += "\nframePresentCount: " + framePresentCount.ToString();
 
-                m_Text.text = output;
+                textField.text = output;
 
-                m_DeltaTime -= m_RefreshFrequency;
+                m_DeltaTime -= refreshFrequency;
                 m_TotalGPUFrameTime = 0.0f;
                 m_FrameCount = 0;
             }

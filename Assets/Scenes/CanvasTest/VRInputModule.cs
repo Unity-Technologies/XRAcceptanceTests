@@ -20,9 +20,7 @@ public class VRInputModule : StandaloneInputModule
     {
         var state = base.GetMousePointerEventData(id);
         var button = state.GetButtonState(PointerEventData.InputButton.Left);
-
-        // HACK: Setting delta to non-zero makes the pointer be moving. It doesn't look like this value used beyond that.
-        // This is required in order for dragging to work with the VR input.
+        
         button.eventData.buttonData.delta = Vector2.one;
 
         state.SetButtonState(PointerEventData.InputButton.Left, button.eventData.buttonState, button.eventData.buttonData);

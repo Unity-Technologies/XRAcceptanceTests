@@ -9,15 +9,15 @@ using UnityEngine.VR;
 
 [RequireComponent(typeof(MeshRenderer))]
 public class GazeInput : MonoBehaviour {
-    private List<RaycastResult> m_RaycastResults;
-    private Camera m_Camera;
-    private EventSystem m_EventSystem;
-    private MeshRenderer m_MeshRenderer;
+    List<RaycastResult> m_RaycastResults;
+    Camera m_Camera;
+    EventSystem m_EventSystem;
+    MeshRenderer m_MeshRenderer;
+    Material m_Material;
 
-    public Color m_DisableColor;
-    public Color m_EnableColor;
-    public float m_DefaultDistance = 15.0f;
-    private Material m_Material;
+    public Color disableColor;
+    public Color enableColor;
+    public float defaultDistance = 15.0f;
 
     void Start()
     {
@@ -44,15 +44,15 @@ public class GazeInput : MonoBehaviour {
 
         if (m_RaycastResults.Count == 0)
         {
-            m_Material.SetColor("_TintColor", m_DisableColor);
+            m_Material.SetColor("_TintColor", disableColor);
 
-            transform.position = m_Camera.transform.position + m_Camera.transform.forward * m_DefaultDistance;
+            transform.position = m_Camera.transform.position + m_Camera.transform.forward * defaultDistance;
             transform.LookAt(m_Camera.transform);
 
         }
         else
         {
-            m_Material.SetColor("_TintColor", m_EnableColor);
+            m_Material.SetColor("_TintColor", enableColor);
 
             var closestResult = new RaycastResult { distance = float.MaxValue };
             foreach (var r in m_RaycastResults)

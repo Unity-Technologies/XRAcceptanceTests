@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAt : MonoBehaviour {
-
-    public Transform m_Target;
+    public Transform target;
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +12,9 @@ public class LookAt : MonoBehaviour {
 	
     public void UpdateOrientation()
     {
-        if (m_Target != null)
+        if (target != null)
         {
-            transform.LookAt(m_Target);
+            transform.LookAt(target);
         }
     }
 

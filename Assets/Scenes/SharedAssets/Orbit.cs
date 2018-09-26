@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Orbit : MonoBehaviour {
-
-    public GameObject m_Target;
-    public float m_AngularVelocity;
-    public Vector3 m_RotationAxis;
+    
+    public GameObject target;
+    public float angularVelocity;
+    public Vector3 rotationAxis;
 
     private float m_Radius;
     private Vector3 m_Direction;
@@ -14,7 +14,7 @@ public class Orbit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        m_Direction = (transform.position - m_Target.transform.position);
+        m_Direction = (transform.position - target.transform.position);
         m_Radius = m_Direction.magnitude;
         m_Direction.Normalize();
     }
@@ -22,8 +22,8 @@ public class Orbit : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        m_AngleOffset += Time.deltaTime * m_AngularVelocity;
-        transform.position = m_Target.transform.position + Quaternion.AngleAxis(m_AngleOffset, m_RotationAxis.normalized) * m_Direction * m_Radius;
+        m_AngleOffset += Time.deltaTime * angularVelocity;
+        transform.position = target.transform.position + Quaternion.AngleAxis(m_AngleOffset, rotationAxis.normalized) * m_Direction * m_Radius;
         
 	}
 }

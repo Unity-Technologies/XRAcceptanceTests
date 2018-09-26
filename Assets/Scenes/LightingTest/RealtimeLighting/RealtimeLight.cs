@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RealtimeLight : MonoBehaviour {
     public new Light light { get; private set; }
     public Mesh textMesh;
     public Billboard lightHalo { get; private set; }
-    private Material lightHaloMaterial;
+    private Material m_LightHaloMaterial;
 
     public float maxIntensity { get; private set; }
-
-    public float m_Intensity = 0.0f;
+    
+    public float intensity = 0.0f;
 
     private Color m_PoseHaloColor;
 
@@ -21,16 +22,15 @@ public class RealtimeLight : MonoBehaviour {
         {
             light.intensity = factor * maxIntensity;
         }
-        if(lightHaloMaterial != null)
+        if(m_LightHaloMaterial != null)
         {
             Color haloColor = m_PoseHaloColor;
             haloColor.a *= factor;
-            lightHaloMaterial.SetColor("_TintColor", haloColor);
+            m_LightHaloMaterial.SetColor("_TintColor", haloColor);
         }
-        m_Intensity = factor;
+        intensity = factor;
     }
     
-    // Use this for initialization
     void Start()
     {
         light = GetComponentInChildren<Light>();
@@ -41,10 +41,10 @@ public class RealtimeLight : MonoBehaviour {
         }
 
         if (lightHalo != null) {
-            lightHaloMaterial = lightHalo.gameObject.GetComponentInChildren<MeshRenderer>().material;
-            m_PoseHaloColor = lightHaloMaterial.GetColor("_TintColor");
+            m_LightHaloMaterial = lightHalo.gameObject.GetComponentInChildren<MeshRenderer>().material;
+            m_PoseHaloColor = m_LightHaloMaterial.GetColor("_TintColor");
         }
-        SetIntensity(m_Intensity);
+        SetIntensity(intensity);
     }
     
 }

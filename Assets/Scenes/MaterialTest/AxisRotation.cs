@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class AxisRotation : MonoBehaviour {
     public Vector3 axis;
-    public float angular_speed;
-    public bool m_Local = false;
+    public float angularSpeed;
+    public bool isLocal = false;
     
     private void Update()
     {
-        if (m_Local)
+        if (isLocal)
         {
-            transform.localRotation = Quaternion.AngleAxis(angular_speed * Time.time, axis.normalized);
+            transform.localRotation = Quaternion.AngleAxis(angularSpeed * Time.time, axis.normalized);
         }
         else
         {
-            transform.rotation = Quaternion.AngleAxis(angular_speed * Time.deltaTime, axis.normalized) * transform.rotation;
+            transform.rotation = Quaternion.AngleAxis(angularSpeed * Time.deltaTime, axis.normalized) * transform.rotation;
         }
     }
 

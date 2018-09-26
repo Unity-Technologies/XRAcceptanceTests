@@ -4,30 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CanvasTextDisplay : MonoBehaviour {
+    
+    public TextMesh textMesh;
+    
+    public float fadeTime = 1.0f;
+    public float timer = 0.0f;
+    public Color disableColor;
+    public Color enableColor;
 
-    public TextMesh m_TextMesh;
-
-    public float m_FadeTime = 1.0f;
-    public float m_Timer = 0.0f;
-    public Color m_DisableColor;
-    public Color m_EnableColor;
-
-    private bool m_State = false;
-
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
+    bool m_State = false;
+    
 	void Update () {
 
-        m_Timer += m_State ? Time.deltaTime : -Time.deltaTime;
+        timer += m_State ? Time.deltaTime : -Time.deltaTime;
+        timer = Mathf.Clamp(timer, 0.0f, fadeTime);
 
-        m_Timer = Mathf.Clamp(m_Timer, 0.0f, m_FadeTime);
-
-        if (m_TextMesh != null)
+        if (textMesh != null)
         {
-            m_TextMesh.color = Color.Lerp(m_DisableColor, m_EnableColor, Mathf.Clamp01(m_Timer / m_FadeTime));
+            textMesh.color = Color.Lerp(disableColor, enableColor, Mathf.Clamp01(timer / fadeTime));
         }
         
     }

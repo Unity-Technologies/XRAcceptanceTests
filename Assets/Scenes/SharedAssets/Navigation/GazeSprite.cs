@@ -15,7 +15,7 @@ public class GazeSprite : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        MeshRenderer m_MeshRenderer = GetComponent<MeshRenderer>();
+        m_MeshRenderer = GetComponent<MeshRenderer>();
         if(m_MeshRenderer != null)
         {
             m_Material = m_MeshRenderer.material;
