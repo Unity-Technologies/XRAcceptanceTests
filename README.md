@@ -3,42 +3,44 @@
 
 This project is used to test Unity’s XR features. Tests in this project are designed to be simple and platform agnostic. The behavior of specific features can be targeted by isolating the systems under test, therefore the scenes have been constructed to limit interaction between different systems and components. Furthermore, display and input systems have been implemented in a generic way so that the project does not rely on the platform specific features of plugins. The project should be used to verify behavior of player configurations, compare features between Unity releases, and test for changes in performance.
 
-Full documentation including comparison images and expected results for all tests are included in the repo.
+Full documentation including comparison images and expected results for all tests are included in the repo as XRAssessmentDocumentation.pdf
   
 
 ## Test Scenes
-Materials
-Baked Lighting
-Real-time Lighting
-Effects
-Terrain
-Canvas
-API Checks
-Performance
-Input
 
+ - Materials
+ - Baked Lighting
+ - Real-time Lighting
+ - Effects
+ - Terrain
+ - Canvas
+ - API Checks
+ - Performance
+ - Input
 
 ## Configurations
 
 These tests are designed to be run in the built-in renderer with multi-pass, single-pass, and single-pass instanced stereo rendering modes. Scenes should be tested to make sure they are displayed the same in the left eye, right eye, Editor GameView, and the player’s standalone mirror (if applicable). All combinations of settings supported by the target platform should be tested:
 
 **Stereo Rendering Modes**
-Multi Pass
-Single Pass
-Single Pass Instanced
+
+ - Multi Pass
+ - Single Pass
+ - Single Pass Instanced
 
 **Graphics APIs**
-Direct3D11
-Direct3D12 (Experimental)
-OpenGL
-Vulkan
-OpenES2
-OpenES3
-Metal
+
+ - Direct3D11
+ - Direct3D12 (Experimental)
+ - OpenGL
+ - Vulkan
+ - OpenES2
+ - OpenES3
+ - Metal
 
 **Players**
-Editor
-Standalone
+ - Editor
+ - Standalone
 
   
 ## Building
