@@ -3,7 +3,7 @@
 
 This project is used to test Unity’s XR features. Tests in this project are designed to be simple and platform agnostic. The behavior of specific features can be targeted by isolating the systems under test, therefore the scenes have been constructed to limit interaction between different systems and components. Furthermore, display and input systems have been implemented in a generic way so that the project does not rely on the platform specific features of plugins. The project should be used to verify behavior of player configurations, compare features between Unity releases, and test for changes in performance.
 
-Full documentation including comparison images and expected results for all tests are included in the repo.
+Full documentation including comparison images and expected results for all tests are included in the repo as XRAssessmentDocumentation.pdf
   
 
 ## Test Scenes
