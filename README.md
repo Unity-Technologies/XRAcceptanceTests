@@ -7,38 +7,40 @@ Full documentation including comparison images and expected results for all test
   
 
 ## Test Scenes
-Materials
-Baked Lighting
-Real-time Lighting
-Effects
-Terrain
-Canvas
-API Checks
-Performance
-Input
 
+ - Materials
+ - Baked Lighting
+ - Real-time Lighting
+ - Effects
+ - Terrain
+ - Canvas
+ - API Checks
+ - Performance
+ - Input
 
 ## Configurations
 
 These tests are designed to be run in the built-in renderer with multi-pass, single-pass, and single-pass instanced stereo rendering modes. Scenes should be tested to make sure they are displayed the same in the left eye, right eye, Editor GameView, and the player’s standalone mirror (if applicable). All combinations of settings supported by the target platform should be tested:
 
 **Stereo Rendering Modes**
-Multi Pass
-Single Pass
-Single Pass Instanced
+
+ - Multi Pass
+ - Single Pass
+ - Single Pass Instanced
 
 **Graphics APIs**
-Direct3D11
-Direct3D12 (Experimental)
-OpenGL
-Vulkan
-OpenES2
-OpenES3
-Metal
+
+ - Direct3D11
+ - Direct3D12 (Experimental)
+ - OpenGL
+ - Vulkan
+ - OpenES2
+ - OpenES3
+ - Metal
 
 **Players**
-Editor
-Standalone
+ - Editor
+ - Standalone
 
   
 ## Building
