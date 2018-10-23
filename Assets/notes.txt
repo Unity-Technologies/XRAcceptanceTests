@@ -1,0 +1,12 @@
+Performance Test:
+-Haze Material: Write in ShaderGraph, remove depth read/write.
+
+Terrain:
+-Add tree/detail objects once support is added.
+
+Effects:
+-Removed projectors because they are unsupported with LWRP.
+
+Materials:
+-Removed Stencil (unsupported)
+-Removed Set Target Buffer (unsupported)
