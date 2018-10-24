@@ -47,7 +47,7 @@ public class GazeSprite : MonoBehaviour {
                 lerpFactor = 1.0f - (bestAngle / m_Angle);
             }
             
-            m_Material.SetColor("_TintColor", Color.Lerp(Color.clear, m_Color, lerpFactor));
+            m_Material.SetColor("_Color", Color.Lerp(Color.clear, m_Color, lerpFactor));
 
             if (m_MeshRenderer != null)
             {
