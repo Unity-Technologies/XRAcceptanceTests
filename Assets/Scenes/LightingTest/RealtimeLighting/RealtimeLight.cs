@@ -51,7 +51,7 @@ public class RealtimeLight : MonoBehaviour {
         {
             Color haloColor = m_PoseHaloColor;
             haloColor.a *= factor;
-            m_LightHaloMaterial.SetColor("_TintColor", haloColor);
+            m_LightHaloMaterial.SetColor("Color_13F2995C", haloColor);
         }
         intensity = factor;
     }
@@ -67,7 +67,7 @@ public class RealtimeLight : MonoBehaviour {
 
         if (lightHalo != null) {
             m_LightHaloMaterial = lightHalo.gameObject.GetComponentInChildren<MeshRenderer>().material;
-            m_PoseHaloColor = m_LightHaloMaterial.GetColor("_TintColor");
+            m_PoseHaloColor = m_LightHaloMaterial.GetColor("Color_13F2995C");
         }
         SetIntensity(intensity);
     }
