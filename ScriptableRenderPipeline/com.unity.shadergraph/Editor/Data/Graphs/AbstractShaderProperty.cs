@@ -36,6 +36,7 @@ namespace UnityEditor.ShaderGraph
             set { m_Name = value; }
         }
 
+        [SerializeField]
         string m_DefaultReferenceName;
 
         public string referenceName
@@ -75,6 +76,7 @@ namespace UnityEditor.ShaderGraph
         }
 
         public abstract Vector4 defaultValue { get; }
+        public abstract bool isBatchable { get; }
         public abstract string GetPropertyBlockString();
         public abstract string GetPropertyDeclarationString(string delimiter = ";");
 

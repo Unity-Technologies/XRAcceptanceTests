@@ -148,8 +148,6 @@ namespace UnityEditor.ShaderGraph
             set { m_PreviewData = value; }
         }
 
-        public string name { get; set; }
-
         [SerializeField]
         string m_Path;
 
@@ -161,7 +159,8 @@ namespace UnityEditor.ShaderGraph
                 if (m_Path == value)
                     return;
                 m_Path = value;
-                owner.RegisterCompleteObjectUndo("Change Path");
+                if(owner != null)
+                    owner.RegisterCompleteObjectUndo("Change Path");
             }
         }
 

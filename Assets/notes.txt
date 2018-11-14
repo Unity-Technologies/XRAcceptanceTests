@@ -10,3 +10,12 @@ Effects:
 Materials:
 -Removed Stencil (unsupported)
 -Removed Set Target Buffer (unsupported)
+
+=====================================================
+2019.1
+
+Disabled Hololens Editor Scripts:
+-Not supported with 2019.1 due to API changes.
+-Add back later after support is restored.
+
+HaloShader could not be updated due to removal of shaderGraph->master node->copy shader.  This was required for passing depth tests for an overlay effect.

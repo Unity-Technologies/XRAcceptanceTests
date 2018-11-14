@@ -4,6 +4,31 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.0.18-preview]
+
+### Fixed
+- Camera viewport wasn't working properly when outputting directly to the backbuffer.
+- More improvements to VR support.
+- Compatibility fixes for 2017.1 to 2017.4.
+- Post-processing wouldn't work when loaded from an asset bundle.
+
+### Changed
+- Scriptable Render Pipelines should now call `PostProcessLayer.UpdateVolumeSystem(Camera, CommandBuffer)` at the beginning of the frame.
+
+## [2.0.17-preview]
+
+### Fixed
+- First pass at improving VR support.
+- Assert on Invalid LDR Lookup Texture size; added a check in the inspector for the user.
+- Improved performance on Unity 2019.1+ by avoiding unnecessary blits if no other image effect is active.
+- Use new ASTC enums on unity 2019.1+.
+
+## [2.0.16-preview]
+
+### Fixed
+- Grain shader compilation errors on some mobile GPUs.
+- Compilation issue with Unity 2019.1+ due to an internal API change.
+
 ## [2.0.15-preview]
 
 ### Fixed

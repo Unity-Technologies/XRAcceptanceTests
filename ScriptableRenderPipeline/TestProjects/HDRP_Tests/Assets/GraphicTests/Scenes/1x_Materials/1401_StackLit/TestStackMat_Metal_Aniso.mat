@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: TestStackMat_Metal_Aniso
   m_Shader: {fileID: 4800000, guid: 3a796817b9614b347895c0e8db89b63a, type: 3}
   m_ShaderKeywords: _MATERIAL_FEATURE_ANISOTROPY
@@ -248,7 +249,7 @@ Material:
     - _EnableWind: 0
     - _EnergyConservingSpecularColor: 1
     - _GeometricNormalFilteringEnabled: 0
-    - _HdrpVersion: 1
+    - _HdrpVersion: 2
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
@@ -337,7 +338,6 @@ Material:
     - _SubsurfaceMaskMapUV: 0
     - _SubsurfaceMaskMapUVLocal: 0
     - _SubsurfaceMaskUseMap: 0
-    - _SupportDBuffer: 1
     - _SurfaceType: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1

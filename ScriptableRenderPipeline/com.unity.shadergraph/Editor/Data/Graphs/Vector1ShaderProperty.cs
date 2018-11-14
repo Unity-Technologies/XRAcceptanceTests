@@ -31,6 +31,11 @@ namespace UnityEditor.ShaderGraph
             get { return new Vector4(value, value, value, value); }
         }
 
+        public override bool isBatchable
+        {
+            get { return true; }
+        }
+
         [SerializeField]
         private FloatType m_FloatType = FloatType.Default;
 
@@ -79,7 +84,7 @@ namespace UnityEditor.ShaderGraph
                     result.Append("\", Float) = ");
                     break;
             }
-            result.Append(value);
+            result.Append(NodeUtils.FloatToShaderValue(value));
             return result.ToString();
         }
 
