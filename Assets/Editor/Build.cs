@@ -51,16 +51,17 @@ public class Build
             case BuildTarget.PS4:
                 break;
         }
-
-        if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.WSAPlayer)
-        {
-            HoloToolkit.Unity.HoloToolkitCommands.BuildSLNAndAPPX(path + $"{Name}");
-        }
-        else
-        {
+        
+        //NOTE: EditorUserBuildSettings has been reworked in 2019.1.0a6.  This change broke the HoloToolkit required to build the WSAPlayer.  Removed WSA builds until the HoloToolkit is updated.
+        //if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.WSAPlayer)
+        //{
+        //    HoloToolkit.Unity.HoloToolkitCommands.BuildSLNAndAPPX(path + $"{Name}");
+        //}
+        //else
+        //{
             // Build player.
             BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, path + $"{Name}" + $"{extension}", EditorUserBuildSettings.activeBuildTarget, BuildOptions.None);
-        }
+        //}
     }
     
     public static void CommandLineBuild()
