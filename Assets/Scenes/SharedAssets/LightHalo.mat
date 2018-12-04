@@ -91,7 +91,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - Color_13F2995C: {r: 0.2924528, g: 0.1848403, b: 0, a: 1}
+    - Color_13F2995C: {r: 0.5283019, g: 0.33159372, b: 0, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 0.2264151, g: 0.1446541, b: 0, a: 1}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}

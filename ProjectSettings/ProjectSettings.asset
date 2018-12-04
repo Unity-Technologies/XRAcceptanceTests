@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 15
+  serializedVersion: 16
   productGUID: 8e18f833927bc0e4685a37581eb14458
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -47,7 +47,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 1
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
@@ -374,12 +374,12 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 1
     m_Devices:
-    - MockHMD
+    - Oculus
   - m_BuildTarget: Android
     m_Enabled: 1
     m_Devices:
     - cardboard
-  - m_BuildTarget: Metro
+  - m_BuildTarget: Windows Store Apps
     m_Enabled: 1
     m_Devices:
     - WindowsMR
@@ -636,7 +636,7 @@ PlayerSettings:
     28: UNITY_POST_PROCESSING_STACK_V2
   platformArchitecture: {}
   scriptingBackend:
-    Metro: 2
+    Windows Store Apps: 2
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
