@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.unity.ads": "2.0.8",
-    "com.unity.analytics": "3.0.9",
+    "com.unity.analytics": "3.2.2",
     "com.unity.collab-proxy": "1.2.9",
-    "com.unity.package-manager-ui": "2.1.0-preview.1",
+    "com.unity.package-manager-ui": "0.0.0-builtin",
     "com.unity.purchasing": "2.0.3",
     "com.unity.xr.legacyinputhelpers": "1.0.0",
     "com.unity.xr.oculus.standalone": "1.29.0",
