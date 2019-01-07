@@ -288,7 +288,7 @@
 	};
 
 	// x: global clip space bias, y: normal world space bias
-	float4 _ShadowBias;
+	//float4 _ShadowBias;
 	float3 _LightDirection;
 
 	VertexOutput ShadowPassVertex(GraphVertexInput v)
