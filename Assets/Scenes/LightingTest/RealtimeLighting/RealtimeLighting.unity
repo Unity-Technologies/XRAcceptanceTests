@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -63,7 +63,8 @@ LightmapSettings:
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
     m_Padding: 2
-    m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
+    m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000,
+      type: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
     m_FinalGather: 0
@@ -88,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 783ec6b47bfee50418ac48f822d8e2f6, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4d29931939f7a8349ac14d4d34802583,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -815,11 +817,13 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.87033534
       objectReference: {fileID: 0}
-    - target: {fileID: 33510672038164100, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+    - target: {fileID: 33510672038164100, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300066, guid: 11d36cd67d731a242ae885ddbd523439, type: 3}
-    - target: {fileID: 33681437876527658, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+    - target: {fileID: 33681437876527658, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300066, guid: 11d36cd67d731a242ae885ddbd523439, type: 3}
