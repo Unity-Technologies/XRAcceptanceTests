@@ -1,0 +1,9 @@
+{
+    "name": "Unity.XR.GoogleVr",
+    "references": [
+        "Unity.XR.Management"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}
+
