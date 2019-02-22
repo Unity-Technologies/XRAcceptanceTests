@@ -3,35 +3,55 @@
 
 2) Clone https://github.cds.internal.unity3d.com/unity/xr.sdk.googlevr
 
-   2a) Clone with LFS enabled
+   a) Clone with LFS enabled
    
-   2b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
+   b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
+
+3) Copy/move/or clone the xr.sdk.googlevr repo to the xr.xracceptancetests directory.
    
-3) Add environmental variable: ANDROID_NDK_HOME with the location of android-sdk-r16b (location of NDK rev 16b)
+4) Add environmental variable: ANDROID_NDK_HOME with the location of android-sdk-r16b (location of NDK rev 16b)
 
-4) Run bee.exe
+5) Run xr.sdk.googlevr/bee.exe
 
-5) Open one of the projects in xr.sdk.googlevr/TestProjects
+6) Locate the project's package manifest in ../Packages/manifest.json.
 
-   5a) The project's manifest should contain an entry for com.unity.xr.googlevr that points to xr.sdk.googlevr/com.unity.xr.googlevr.
+   a) Edit the manifest by adding a "registry" line (see example below)
+
+   b) Edit the manifest to point "com.unity.xr.googlevr" at the cloned repo location (see example below)
+
+~~~json
+{
+  "registry": "https://staging-packages.unity.com",
+  "dependencies": {
+   ...
+    "com.unity.xr.googlevr": "file:../xr.sdk.googlevr/com.unity.xr.googlevr",
+   ...
+  }
+}
+
+~~~
+
+7) Open the xr.xracceptancetests project.
    
-   5b) If the TestProjects directory has been moved relative to the repo then update the package manifest accordingly.
-   
-6) Change to an Android build target
+8) Change to an Android build target
 
-7) Open the project's main scene
-
-8) Ensure the project has an XRManager setup correctly in one of two ways:
-
-   8a) XRManager object in the scene should contain the XR Manager script and appropriate loaders (this method will be deprecated).
+9) Add an XRManager:
    
-   8b) or Project Settings>XR should contain a link to a prefab that contains the XRManager and appropriate loaders.
+   a) Create a new object and add an XRManager component.
    
-   8c) In it's current state, it is best to include only Cardboard or Daydream in the XRManager's loader list.
+   b) Add/create the desired loaders in the XRManager object's inspector.
    
-9) Build and run if using the Cardboard loader.
+   c) Create a prefab of this XRManager object.  Delete any instances of this prefab.
+   
+   d) Navigate to Project Settings>XR and attach the XRManager object to the XR Manager field.
 
-10) Add a manifest override at Assets/Plugins/Android/AndroidManifest.xml if using Daydream.  The body of the manifest should be similar to the listing below.  This file was derived from an AndroidManifest.xml obtained from a legacy android build:
+   e) In it's current state, it is best to include only Cardboard or Daydream in the XRManager's loader list (not both).
+   
+11) Remove any unused sdks and disable XR in Player Settings>XR
+   
+12) Build and run if using the Cardboard loader.
+
+13) For Daydream, add a manifest override at Assets/Plugins/Android/AndroidManifest.xml.  The body of the manifest should be similar to the listing below.  This file was derived from an AndroidManifest.xml obtained from a legacy android build:
 
 ~~~xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -70,9 +90,9 @@
 </manifest>
 ~~~
 
-11) Edit AndroidManifest.xml to include the correct Package Name (line 2)
+14) Edit AndroidManifest.xml to include the correct Package Name (line 2)
 
-12) The DAYDREAM, or CARDBOARD activity (or both depending on XRManager settings) must be added in the intent-filters.
+15) The DAYDREAM, or CARDBOARD activity (or both depending on XRManager settings) must be added in the intent-filters.
 
 ~~~xml
       <intent-filter>
@@ -83,4 +103,59 @@
     </intent-filter>
 ~~~
 
-13) Launch from daydream launcher if using Daydream.  Cardboard should launch correctly from android desktop.
+16) Launch from daydream launcher if using Daydream.  Cardboard should launch correctly from android desktop.
+
+## XR.SDK.OCULUS
+1) Install Unity 2019.1.0a11+
+
+2) Clone https://github.cds.internal.unity3d.com/unity/xr.sdk.oculus
+
+   2a) Clone with LFS enabled
+   
+   2b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
+
+3) Copy/move/or clone the xr.sdk.oculus repo to the xr.xracceptancetests directory.
+
+4) Run xr.sdk.oculus/bee.exe
+
+5) Locate the project's package manifest in ../Packages/manifest.json.
+
+   5a) Edit the manifest by adding a "registry" line (see example below)
+
+   5b) Edit the manifest to point "com.unity.xr.oculus" at the cloned repo location (see example below)
+
+~~~json
+{
+  "registry": "https://staging-packages.unity.com",
+  "dependencies": {
+   ...
+    "com.unity.xr.oculus": "file:../xr.sdk.oculus/com.unity.xr.oculus",
+   ...
+  }
+}
+
+~~~
+
+6) Open the xr.xracceptancetests project.
+   
+7) Change to the desired build target (windows or android)
+
+8) Add an XRManager:
+   
+   9a) Create a new object and add an XRManager component.
+   
+   9b) Add a loader to the XRManager object in the object's inspector.
+   
+   9c) Create a prefab of this XRManager object.  Delete any instances of this prefab.
+   
+   9d) Navigate to Project Settings>XR and attach the XRManager object to the XR Manager field.
+   
+9) Set the stereo rendering mode in Project Settings>XR>Oculus
+
+10) Select the appropriate build target in Project Settings>XR>Oculus (Windows or Android from the two buttons at the top).
+
+11) Remove any unused sdks and disable XR in Player Settings>XR
+   
+12) Build and run if using Windows standalone.
+
+13) Add an oculus signature file to Plugins/Android/assets if targeting GearVR before building and running.
