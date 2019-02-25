@@ -159,3 +159,55 @@
 12) Build and run if using Windows standalone.
 
 13) Add an oculus signature file to Plugins/Android/assets if targeting GearVR before building and running.
+
+## Windows Mixed Reality
+
+1) Download & Install latest trunk build
+
+2) Clone locally https://github.cds.internal.unity3d.com/unity/xr.sdk.windowsmr
+
+   2a) Clone with LFS enabled
+   
+   2b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
+
+3) In a command prompt window, navigate to the local clone created in step 2 and run command "bee.exe"
+   4a) You can also run bee.exe by finding it in Windows Explorer manually
+
+4) Locate the Acceptance Test Project's package manifest in ../Packages/manifest.json
+
+   4a) Edit the manifest by adding a "registry" line (see example below)
+   
+   4b) In Windows Explorer, navigate to the WMR XR SDK package you cloned and copy the file path to inside the WMR XR SDK package
+         (Example, D:\Dev\xrsdk\com.unity.xr.windowsmr)
+
+   4c) Edit the manifest to point "xr.sdk.windowsmr" at the cloned repo location and include the Legacy Input Helper (see example below)
+
+   			{
+			  "registry": "https://staging-packages.unity.com",
+			  "dependencies": {
+			    "com.unity.xr.legacyinputhelpers": "1.2.1",
+			    "com.unity.xr.windowsmr": "file:D:/Dev/xrsdk/com.unity.xr.windowsmr",
+			     },
+            }
+            
+   4d) Change all "\" to "/" characters in your file path to the Windows MR XR SDK package
+
+5) Open the xr.xracceptancetests project in Unity
+   5a) It may prompt to create settings/loaders for you. Accept this prompt.
+
+6) Change to the desired build target
+   6a) Windows MR headsets support UWP and "PC/Linux/Mac Standalone" (Does not actually support Linux or Mac)
+   6b) Microsoft Hololens only supports UWP
+   
+7) Open Project Settings > XR > Windows Mixed Reality, and confirm "Use Primary Window" is enabled
+
+8) Remove any SDKs and disable XR in Player Settings>XR
+
+9) Build project for UWP or PC Standalone
+
+10) Open the Visual Studio Solution that was built in the prior step
+
+11) Deploy to the device using one of the following configurations:
+   11a) WMR: Release or Debug || x64 or x86 || Local Machine
+   11b) Hololens: Release or Debug || x86 || Remote Machine: <Hololens' IPv4>
+   11b.1) To retrieve a Hololens' IPv4, go to Settings > Network > Select WiFi > Advanced Settings
