@@ -190,7 +190,7 @@
 			     },
             }
             
-   4d) Change all "\" to "/" characters in your file path to the Windows MR XR SDK package
+   4d) Change all backslash characters to forward slash characters in your file path to the Windows MR XR SDK package
 
 5) Open the xr.xracceptancetests project in Unity
    5a) It may prompt to create settings/loaders for you. Accept this prompt.
