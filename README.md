@@ -171,16 +171,17 @@
    2b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
 
 3) In a command prompt window, navigate to the local clone created in step 2 and run command "bee.exe"
-   4a) You can also run bee.exe by finding it in Windows Explorer manually
+   
+   3a) You can also run bee.exe by finding it in Windows Explorer manually
 
 4) Locate the Acceptance Test Project's package manifest in ../Packages/manifest.json
 
    4a) Edit the manifest by adding a "registry" line (see example below)
    
-   4b) In Windows Explorer, navigate to the WMR XR SDK package you cloned and copy the file path to inside the WMR XR SDK package
+   4b) In Windows Explorer, navigate to the WMR XR SDK package you cloned in step 2 and copy the file path to inside the WMR XR SDK package
          (Example, D:\Dev\xrsdk\com.unity.xr.windowsmr)
 
-   4c) Edit the manifest to point "xr.sdk.windowsmr" at the cloned repo location and include the Legacy Input Helper (see example below)
+   4c) Edit the manifest to point "xr.sdk.windowsmr" folder at the cloned repo location and include the Legacy Input Helper (see example below)
 
    			{
 			  "registry": "https://staging-packages.unity.com",
@@ -201,7 +202,7 @@
    
 7) Open Project Settings > XR > Windows Mixed Reality, and confirm "Use Primary Window" is enabled
 
-8) Remove any SDKs and disable XR in Player Settings>XR
+8) Remove any SDKs and disable XR in Player Settings>XR if not done automatically. If it hasn't been done automatically, ensure your XR SDK has installed properly. If it's not disabled, and not greyed out, this is a sign something didn't work with what you have done up to this point.
 
 9) Build project for UWP or PC Standalone
 
