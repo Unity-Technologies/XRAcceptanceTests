@@ -21,14 +21,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ArrowMaterial
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a168bace4339ca4429daad1f08c1f193,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -105,7 +105,9 @@ Material:
     - Color_60F97536: {r: 0.99607843, g: 0.635294, b: 0.003921569, a: 1}
     - Color_F585D715: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
     - Color_FBAD3EAA: {r: 1, g: 1, b: 1, a: 1}
+    - _AdditiveColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
     - _BaseColor: {r: 0.8018868, g: 0.35364884, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OverlayColor: {r: 1, g: 0.5531371, b: 0, a: 1}
     - _TintColor: {r: 0.9960785, g: 0.63529414, b: 0.003921569, a: 1}

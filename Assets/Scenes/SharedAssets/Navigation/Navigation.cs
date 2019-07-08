@@ -64,7 +64,7 @@ public class Navigation : MonoBehaviour {
             MeshRenderer renderer = arrow.GetComponent<MeshRenderer>();
             if(renderer != null)
             {
-                renderer.material.SetColor("_TintColor", Color.white);
+                renderer.material.SetColor("_OverlayColor", Color.white);
             }
         }
         
