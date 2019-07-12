@@ -1451,6 +1451,7 @@ GameObject:
   - component: {fileID: 1159770242}
   - component: {fileID: 1159770241}
   - component: {fileID: 1159770240}
+  - component: {fileID: 1159770243}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1569,6 +1570,24 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &1159770243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159770236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1742909100, guid: ed7343f30e3843b3afda8f8b02669cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 1
 --- !u!1 &1261423468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2511,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4104391720259102, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104391720259102, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104391720259102, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 4862213641587686, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.058689214
@@ -2523,18 +2554,6 @@ PrefabInstance:
     - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.87033534
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104391720259102, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104391720259102, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104391720259102, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
