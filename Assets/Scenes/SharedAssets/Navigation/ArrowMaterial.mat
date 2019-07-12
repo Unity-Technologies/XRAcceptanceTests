@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ArrowMaterial
-  m_Shader: {fileID: 4800000, guid: 0d0b85e509318d147b1c97c514b25c71, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 70ac074fc977576418bcb2e216900d9f,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -81,7 +82,9 @@ Material:
     - Color_60F97536: {r: 0.99607843, g: 0.635294, b: 0.003921569, a: 1}
     - Color_F585D715: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
     - Color_FBAD3EAA: {r: 1, g: 1, b: 1, a: 1}
+    - _AdditiveColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     - _BaseColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OverlayColor: {r: 1, g: 0.5893744, b: 0, a: 1}
     - _TintColor: {r: 0.9960785, g: 0.63529414, b: 0.003921569, a: 1}

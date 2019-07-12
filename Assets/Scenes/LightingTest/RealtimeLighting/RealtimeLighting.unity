@@ -99,7 +99,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000002, guid: 783ec6b47bfee50418ac48f822d8e2f6,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 81322286}
   - component: {fileID: 81322285}
   - component: {fileID: 81322288}
+  - component: {fileID: 81322289}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,7 +216,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 81322284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 9e6d1daa2ed94ba41b683a8bf100aa83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -226,6 +226,24 @@ MonoBehaviour:
   fadeDuration: 0.5
   idleDuration: 2
   orbit: {fileID: 842244826}
+--- !u!114 &81322289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81322284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 1
 --- !u!1 &111329967
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +287,24 @@ Light:
     m_Bias: 0.005
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -276,12 +312,15 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &111329969
@@ -309,7 +348,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 111329967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: c7c372c1d51dbaa4c8c4fa70efbd93fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -323,7 +361,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 111329967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 8c4e8c2a528e10249858347c11b25f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -448,7 +485,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 176486060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: c7c372c1d51dbaa4c8c4fa70efbd93fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -479,7 +515,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 176486060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 8c4e8c2a528e10249858347c11b25f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -559,7 +594,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 432605566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: c7c372c1d51dbaa4c8c4fa70efbd93fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -588,6 +622,24 @@ Light:
     m_Bias: 0.005
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -595,12 +647,15 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1 &555402591
@@ -721,7 +776,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 583764606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: c7c372c1d51dbaa4c8c4fa70efbd93fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -750,6 +804,24 @@ Light:
     m_Bias: 0.005
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -757,12 +829,15 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!1001 &744076370
@@ -804,22 +879,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.05868922
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.48784205
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.032896597
-      objectReference: {fileID: 0}
-    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.87033534
-      objectReference: {fileID: 0}
     - target: {fileID: 4862213641587686, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.05868922
@@ -836,12 +895,28 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.87033534
       objectReference: {fileID: 0}
-    - target: {fileID: 33510672038164100, guid: 5982501e2fb1eb741abed92849d0f915,
+    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.05868922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.48784205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.032896597
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.87033534
+      objectReference: {fileID: 0}
+    - target: {fileID: 33681437876527658, guid: 5982501e2fb1eb741abed92849d0f915,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300066, guid: 11d36cd67d731a242ae885ddbd523439, type: 3}
-    - target: {fileID: 33681437876527658, guid: 5982501e2fb1eb741abed92849d0f915,
+    - target: {fileID: 33510672038164100, guid: 5982501e2fb1eb741abed92849d0f915,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -874,7 +949,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 842244825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 21dd40b7848fc134dba7e79b4e95ec37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1014,7 +1088,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077548526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e130e9cc7f4190949a410e64a5264dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1181,7 +1254,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212035596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 8c4e8c2a528e10249858347c11b25f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1213,7 +1285,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212035596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: c7c372c1d51dbaa4c8c4fa70efbd93fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1527,7 +1598,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849628662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e130e9cc7f4190949a410e64a5264dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1618,7 +1688,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859488093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: e130e9cc7f4190949a410e64a5264dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
