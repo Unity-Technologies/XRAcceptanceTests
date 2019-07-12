@@ -94,8 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: b75b6f79576077f4a8915f0d5325cd73,
     type: 2}
   m_UseShadowmask: 1
@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &17108948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4862213641587686, guid: 5982501e2fb1eb741abed92849d0f915,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090548002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &339769547
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 339769547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -188,6 +194,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &339769550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -224,7 +231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 753980442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -241,7 +248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 753980442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
@@ -307,6 +314,7 @@ GameObject:
   - component: {fileID: 1159770238}
   - component: {fileID: 1159770237}
   - component: {fileID: 1159770240}
+  - component: {fileID: 1159770241}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -392,6 +400,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 1854168760}
+--- !u!114 &1159770241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159770236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 1
 --- !u!1 &1415550776
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1415550776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -438,7 +464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1415550776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -505,6 +531,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -516,6 +543,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -550,6 +578,12 @@ Transform:
   m_Father: {fileID: 1935409113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &1431687840 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4733481557248140, guid: 5982501e2fb1eb741abed92849d0f915,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090548002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854168758
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854168758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -823,5 +857,45 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.85931057
       objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_GazeableTransforms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_Angle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9044118
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5743015
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_Distance
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_GazeableTransforms.Array.data[0]
+      value: 
+      objectReference: {fileID: 17108948}
+    - target: {fileID: 114857478846896282, guid: 5982501e2fb1eb741abed92849d0f915,
+        type: 3}
+      propertyPath: m_GazeableTransforms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1431687840}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5982501e2fb1eb741abed92849d0f915, type: 3}

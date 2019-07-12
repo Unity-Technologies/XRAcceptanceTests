@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using System;
 
 public class GazeSprite : MonoBehaviour {
 
-    public Transform[] m_GazeableTransforms;
-    public float m_Angle;
+    [SerializeField] Transform[] m_GazeableTransforms;
+    [SerializeField] float m_Angle;
     private MeshRenderer m_MeshRenderer;
     private Material m_Material;
-    public Color m_Color;
+    [SerializeField] Color m_Color;
 
-    public float m_Distance = 2.0f;
+    [SerializeField] float m_Distance = 2.0f;
     
 
 	// Use this for initialization
