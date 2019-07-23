@@ -1,161 +1,89 @@
-## XR.SDK.GOOGLEVR
-1) Install Unity 2019.1.0a11+
+# Unity XR Acceptance Tests
 
-2) Clone https://github.cds.internal.unity3d.com/unity/xr.sdk.googlevr
 
-   a) Clone with LFS enabled
-   
-   b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
 
-3) Copy/move/or clone the xr.sdk.googlevr repo to the xr.xracceptancetests directory.
-   
-4) Add environmental variable: ANDROID_NDK_HOME with the location of android-sdk-r16b (location of NDK rev 16b)
+This project is used to test Unity’s XR features. Tests in this project are designed to be simple and platform agnostic. The behavior of specific features can be targeted by isolating the systems under test, therefore the scenes have been constructed to limit interaction between different systems and components. Furthermore, display and input systems have been implemented in a generic way so that the project does not rely on the platform specific features of plugins. The project should be used to verify behavior of player configurations, compare features between Unity releases, and test for changes in performance.
 
-5) Run xr.sdk.googlevr/bee.exe
+Full documentation including comparison images and expected results for all tests are included in the repo as XRAssessmentDocumentation.pdf
+  
+## XR SDK Setup
+See https://forum.unity.com/threads/xr-plugins-and-subsystems.693463/ for instructions.
 
-6) Locate the project's package manifest in ../Packages/manifest.json.
+## Test Scenes
 
-   a) Edit the manifest by adding a "registry" line (see example below)
+ - Materials
+ - Baked Lighting
+ - Real-time Lighting
+ - Effects
+ - Terrain
+ - Canvas
+ - API Checks
+ - Performance
+ - Input
 
-   b) Edit the manifest to point "com.unity.xr.googlevr" at the cloned repo location (see example below)
+## Configurations
 
-~~~json
-{
-  "registry": "https://staging-packages.unity.com",
-  "dependencies": {
-   ...
-    "com.unity.xr.googlevr": "file:../xr.sdk.googlevr/com.unity.xr.googlevr",
-   ...
-  }
-}
+These tests are designed to be run in the built-in renderer with multi-pass, single-pass, and single-pass instanced stereo rendering modes. Scenes should be tested to make sure they are displayed the same in the left eye, right eye, Editor GameView, and the player’s standalone mirror (if applicable). All combinations of settings supported by the target platform should be tested:
 
-~~~
+**Stereo Rendering Modes**
 
-7) Open the xr.xracceptancetests project.
-   
-8) Change to an Android build target
+ - Multi Pass
+ - Single Pass
+ - Single Pass Instanced
 
-9) Add an XRManager:
-   
-   a) Create a new object and add an XRManager component.
-   
-   b) Add/create the desired loaders in the XRManager object's inspector.
-   
-   c) Create a prefab of this XRManager object.  Delete any instances of this prefab.
-   
-   d) Navigate to Project Settings>XR and attach the XRManager object to the XR Manager field.
+**Graphics APIs**
 
-   e) In it's current state, it is best to include only Cardboard or Daydream in the XRManager's loader list (not both).
-   
-11) Remove any unused sdks and disable XR in Player Settings>XR
-   
-12) Build and run if using the Cardboard loader.
+ - Direct3D11
+ - Direct3D12 (Experimental)
+ - OpenGL
+ - Vulkan
+ - OpenES2
+ - OpenES3
+ - Metal
 
-13) For Daydream, add a manifest override at Assets/Plugins/Android/AndroidManifest.xml.  The body of the manifest should be similar to the listing below.  This file was derived from an AndroidManifest.xml obtained from a legacy android build:
+**Players**
+ - Editor
+ - Standalone
 
-~~~xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.daydreamdisplayprovider" xmlns:tools="http://schemas.android.com/tools" android:installLocation="preferExternal">
-  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
-  <application android:icon="@mipmap/app_icon" android:label="@string/app_name" android:theme="@style/VrActivityTheme">
-    <activity 
-    android:name="com.unity3d.player.UnityPlayerActivity" 
-    android:label="@string/app_name" 
-    android:screenOrientation="landscape" 
-    android:launchMode="singleTask" 
-    android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" 
-    android:hardwareAccelerated="false" 
-    android:enableVrMode="@string/gvr_vr_mode_component" 
-    android:resizeableActivity="false">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-        <category android:name="com.google.intent.category.DAYDREAM" />
-      </intent-filter>
-      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-    </activity>
-    <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-    <meta-data android:name="unity.splash-mode" android:value="0" />
-    <meta-data android:name="unity.splash-enable" android:value="False" />
-  </application>
-  <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="24"/>
-  <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
-  <uses-feature android:name="android.hardware.vr.headtracking" android:required="false" android:version="1" />
-  <uses-feature android:name="android.software.vr.mode" android:required="true" />
-  <uses-feature android:name="android.hardware.vr.high_performance" android:required="true" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
-  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
-</manifest>
-~~~
+  
+## Building
+Tests can be run manually in the editor or in a built player. Batch building functionality has been included in this project to provide an easy-to-use script and build configuration system that can build a common set of configurations for testing. In addition, this system allows for multiple build configurations to be built at once to reduce overhead of managing multiple test build configurations. Finally, utilization of the batch builds will maintain a consistent set of build settings across test passes to reduce configuration errors.
 
-14) Edit AndroidManifest.xml to include the correct Package Name (line 2)
+**Usage**
+The build scripts located in the root of this project are available to build the most common configurations of the project for testing across supported platforms. Scripts are available for Windows (.bat) and macOS (.command) in the BuildScripts folder. A Build Windows UI is available in the Editor to run batch builds and allow customization of the build configurations
 
-15) The DAYDREAM, or CARDBOARD activity (or both depending on XRManager settings) must be added in the intent-filters.
+Pass the location of the Unity executable to run from the command line:
 
-~~~xml
-      <intent-filter>
-        ...
-        <category android:name="com.google.intent.category.DAYDREAM" />
-        <category android:name="com.google.intent.category.CARDBOARD" />
-        ...
-    </intent-filter>
-~~~
+  
 
-16) Launch from daydream launcher if using Daydream.  Cardboard should launch correctly from android desktop.
+**Windows Example:**
 
-## XR.SDK.OCULUS
-1) Install Unity 2019.1.0a11+
+    BuildWindows.bat <location of Unity.exe>
 
-2) Clone https://github.cds.internal.unity3d.com/unity/xr.sdk.oculus
+  
 
-   2a) Clone with LFS enabled
-   
-   2b) Make sure the cloned repo contains bee.exe (if not, gitignore_global.txt might be excluding .exe files)
+**MacOS Example:**
 
-3) Copy/move/or clone the xr.sdk.oculus repo to the xr.xracceptancetests directory.
+    BuildmacOS.command <location of Unity.app>/Content/Unity...
 
-4) Run xr.sdk.oculus/bee.exe
+  
 
-5) Locate the project's package manifest in ../Packages/manifest.json.
 
-   5a) Edit the manifest by adding a "registry" line (see example below)
+The builds will be located in:
 
-   5b) Edit the manifest to point "com.unity.xr.oculus" at the cloned repo location (see example below)
+  
 
-~~~json
-{
-  "registry": "https://staging-packages.unity.com",
-  "dependencies": {
-   ...
-    "com.unity.xr.oculus": "file:../xr.sdk.oculus/com.unity.xr.oculus",
-   ...
-  }
-}
+    <Project Directory>\Builds\<Build Target>\<VR SDK>\<Stereo Rendering Method>-<Graphics API>
 
-~~~
+  
 
-6) Open the xr.xracceptancetests project.
-   
-7) Change to the desired build target (windows or android)
+For example,
 
-8) Add an XRManager:
-   
-   9a) Create a new object and add an XRManager component.
-   
-   9b) Add a loader to the XRManager object in the object's inspector.
-   
-   9c) Create a prefab of this XRManager object.  Delete any instances of this prefab.
-   
-   9d) Navigate to Project Settings>XR and attach the XRManager object to the XR Manager field.
-   
-9) Set the stereo rendering mode in Project Settings>XR>Oculus
+    ...\Builds\StandaloneWindows64\Oculus\Instancing-Direct3D11.exe
+    
+    ...\Builds\StandaloneWindows64\Oculus\MultiPass-Direct3D11.exe
 
-10) Select the appropriate build target in Project Settings>XR>Oculus (Windows or Android from the two buttons at the top).
 
-11) Remove any unused sdks and disable XR in Player Settings>XR
-   
-12) Build and run if using Windows standalone.
+## Scene Navigation
 
-13) Add an oculus signature file to Plugins/Android/assets if targeting GearVR before building and running.
+Gaze based controls have been implemented for scene navigation to allow the project to run on a variety of platforms without platform specific input dependencies. Gaze at the gray arrows in any scene to transition to the next or previous scene. The arrows will progressively fill for several seconds as long as gaze focus is maintained. The scene will transition once the arrow is completely filled.
