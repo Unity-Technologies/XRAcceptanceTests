@@ -10,7 +10,7 @@
 		_EmissionColor("Emission Color", Color) = (1, 1, 1, 1)
 	}
 		SubShader{
-		Tags{ "RenderType" = "Opaque" "IgnoreProjectors" = "True" "RenderPipeline" = "LightweightPipeline" }
+		Tags{ "RenderType" = "Opaque" "IgnoreProjectors" = "True" "RenderPipeline" = "UniversalPipeline" }
 		LOD 200
 
 		CGPROGRAM
