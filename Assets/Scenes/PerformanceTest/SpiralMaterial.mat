@@ -5,12 +5,14 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: SpiralMaterial
-  m_Shader: {fileID: 4800000, guid: a28ead3f110541140ab8e2e8c2cb30c4, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2837f011ae2fa8f4d91817f1252f1627,
+    type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_DC22598:
+        m_Texture: {fileID: 2800000, guid: abc6669f27e5d46408fe6d496d6e1b1e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -63,6 +69,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_1B33C1CF: 0.74
+    - Vector1_9477808E: -0.14
     - _Alpha: 0.436
     - _Ambient: 0
     - _Attenuation: 2
@@ -88,6 +96,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_6B407245: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8EA401FB: {r: 1, g: 0.6313726, b: 0, a: 1}
+    - Color_DE14ABEF: {r: 1, g: 0.6313726, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.9960785, g: 0.63529414, b: 0.003921569, a: 1}
     - _HeightColor: {r: 0.9960785, g: 0.63529414, b: 0.003921569, a: 1}

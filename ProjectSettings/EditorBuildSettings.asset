@@ -32,4 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InputRegressionTest/InputRegressionTest.unity
     guid: d2e19aec385c9284aa61de3cea3bbce3
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b1971c5489199d64898b7fbac691f6e5,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4e875e22eb5a8864baeacba054e3955f,
+      type: 2}

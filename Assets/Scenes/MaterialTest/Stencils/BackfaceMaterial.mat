@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: BackfaceMaterial
   m_Shader: {fileID: 4800000, guid: 3cec08647e15c9c4586d6a6b08d1fa46, type: 3}
   m_ShaderKeywords: 
