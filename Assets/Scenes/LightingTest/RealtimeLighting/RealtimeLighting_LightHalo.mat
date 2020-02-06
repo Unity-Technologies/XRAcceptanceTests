@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RealtimeLighting_LightHalo
-  m_Shader: {fileID: 4800000, guid: d622be77d064804488073e1544e5a038, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2c02138e39a5f6a4d8a8c866141c91b0, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _COLOROVERLAY_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
