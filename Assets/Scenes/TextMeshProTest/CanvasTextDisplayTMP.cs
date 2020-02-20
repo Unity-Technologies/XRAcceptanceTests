@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-public class CanvasTextDisplay : MonoBehaviour
+public class CanvasTextDisplayTMP : MonoBehaviour
 {
 
-    public TextMesh textMesh;
+    public TextMeshPro textMesh;
 
     public float fadeTime = 1.0f;
     public float timer = 0.0f;

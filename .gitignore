@@ -16,3 +16,5 @@ obj/
 *.preformat.bak.meta
 Assets/Resources/TestAttributes.*
 Assets/Resources/PlayerSettings.*
+*.mp4
+Assets/TextMesh Pro/Examples & Extras/

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_2017_2_OR_NEWER
@@ -7,24 +8,41 @@ using UnityEngine.XR;
 using UnityEngine.VR;
 #endif
 
-public class APICheck : MonoBehaviour {
+public class APICheck : MonoBehaviour
+{
 
     public UnityEngine.UI.Text textField;
-    
-	void Update () {
-        
+    private string _deviceLoaded = "";
+
+    private void Awake()
+    {
+        XRDevice.deviceLoaded += isDeviceLoaded;
+    }
+
+    private void isDeviceLoaded(string obj)
+    {
+        _deviceLoaded = $"Device Loaded {obj}";
+    }
+
+    void Update()
+    {
+
         if (textField != null)
         {
 
             string text = "";
 
-    #if UNITY_2017_2_OR_NEWER
+#if UNITY_2017_2_OR_NEWER
             text += "XRDevice\n";
             text += "\tisPresent: " + XRDevice.isPresent + "\n";
             text += "\tmodel: " + XRDevice.model + "\n";
             text += "\trefreshRate: " + XRDevice.refreshRate + "\n";
             text += "\tuserPresence: " + XRDevice.userPresence + "\n";
             text += "\tfovZoomFactor: " + XRDevice.fovZoomFactor + "\n";
+            text += "\ttrackingORiginMode:" + XRDevice.trackingOriginMode + "\n";
+            text += "\tgetNativePTR:" + XRDevice.GetNativePtr().ToString() + "\n";
+            text += "\tgetTrackingSpaceType:" + XRDevice.GetTrackingSpaceType().ToString() + "\n";
+            text += "\tdeviceloaded:" + _deviceLoaded + "\n";
 
             text += "\nXRSettings\n";
             text += "\teyeTextureHeight: " + XRSettings.eyeTextureHeight + "\n";
@@ -35,12 +53,23 @@ public class APICheck : MonoBehaviour {
             text += "\tocclusionMaskScale: " + XRSettings.occlusionMaskScale + "\n";
             text += "\trenderViewportScale: " + XRSettings.renderViewportScale + "\n";
             text += "\tsupportedDevices: ";
-            foreach(string device in XRSettings.supportedDevices)
+            foreach (string device in XRSettings.supportedDevices)
             {
                 text += "[" + device + "]";
             }
+            text += "\tdeviceEyeTextureDimension:" + XRSettings.deviceEyeTextureDimension.ToString() + "\n";
+            text += "\tgmeViewRenderMode:" + XRSettings.gameViewRenderMode.ToString() + "\n";
+            text += "\tuseOcclusionMesh:" + XRSettings.useOcclusionMesh.ToString() + "\n";
+            text += "\tloadedDeviceName:" + XRSettings.loadedDeviceName + "\n";
+
+            text += "\nInputTracking\n";
+
+            text += "\tgetLocalPos:" + $"{InputTracking.GetLocalPosition(XRNode.CenterEye)}" + "\n";
+            text += "\tgetLocalRot:" + $"{InputTracking.GetLocalRotation(XRNode.CenterEye)}" + "\n";
+            //text += "\tgetNodeName:" + $"{InputTracking.GetNodeName(XRNode.CenterEye)}" + "\n";
+
             text += "\n";
-    #else
+#else
             text += "XRDevice\n";
             text += "\tisPresent: " + VRDevice.isPresent + "\n";
             text += "\tmodel: " + VRDevice.model + "\n";
@@ -62,7 +91,7 @@ public class APICheck : MonoBehaviour {
                 text += "[" + device + "]";
             }
             text += "\n";
-    #endif
+#endif
             textField.text = text;
         }
     }
