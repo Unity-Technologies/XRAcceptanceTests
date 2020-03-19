@@ -49,6 +49,8 @@ PlayerSettings:
   m_StereoRenderingPath: 1
   m_ActiveColorSpace: 1
   m_MTRendering: 1
+  mipStripping: 0
+  numberOfMipsStripped: 0
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
@@ -103,6 +105,7 @@ PlayerSettings:
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
+  xboxOneEnableTypeOptimization: 0
   xboxOnePresentImmediateThreshold: 0
   switchQueueCommandMemory: 0
   switchQueueControlMemory: 0
@@ -181,10 +184,10 @@ PlayerSettings:
   StripUnusedMeshComponents: 1
   VertexChannelCompressionMask: 4054
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 10.0
+  iOSTargetOSVersionString: 11.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 10.0
+  tvOSTargetOSVersionString: 11.0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -445,12 +448,14 @@ PlayerSettings:
   cameraUsageDescription: 
   locationUsageDescription: 
   microphoneUsageDescription: 
+  switchNMETAOverride: 
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
   switchSocketAllocatorPoolSize: 128
   switchSocketConcurrencyLimit: 14
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
+  switchUseGOLDLinker: 0
   switchApplicationID: 0x01004b9000490000
   switchNSODependencies: 
   switchTitleNames_0: 
@@ -661,9 +666,10 @@ PlayerSettings:
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
+  webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 0
   webGLThreadsSupport: 0
-  webGLWasmStreaming: 0
+  webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: UNITY_POST_PROCESSING_STACK_V2
     4: UNITY_POST_PROCESSING_STACK_V2
@@ -717,31 +723,31 @@ PlayerSettings:
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities:
     WindowsStoreApps:
-      AllJoyn: False
-      BlockedChatMessages: False
-      Bluetooth: False
+      VideosLibrary: False
+      HumanInterfaceDevice: False
+      Location: False
       Chat: False
+      Bluetooth: False
+      AllJoyn: False
+      MusicLibrary: False
+      PrivateNetworkClientServer: False
+      InternetClientServer: True
+      Objects3D: False
+      BlockedChatMessages: False
+      PhoneCall: False
+      SpatialPerception: True
+      Microphone: False
+      SharedUserCertificates: False
+      InputInjectionBrokered: False
+      PicturesLibrary: False
+      RemovableStorage: False
+      WebCam: False
+      VoipCall: False
+      UserAccountInformation: False
+      Proximity: False
+      InternetClient: True
       CodeGeneration: False
       EnterpriseAuthentication: False
-      HumanInterfaceDevice: False
-      InputInjectionBrokered: False
-      InternetClient: True
-      InternetClientServer: True
-      Location: False
-      Microphone: False
-      MusicLibrary: False
-      Objects3D: False
-      PhoneCall: False
-      PicturesLibrary: False
-      PrivateNetworkClientServer: False
-      Proximity: False
-      RemovableStorage: False
-      SharedUserCertificates: False
-      SpatialPerception: True
-      UserAccountInformation: False
-      VideosLibrary: False
-      VoipCall: False
-      WebCam: False
   metroTargetDeviceFamilies: {}
   metroFTAName: 
   metroFTAFileTypes: []
@@ -797,3 +803,4 @@ PlayerSettings:
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 1
+  virtualTexturingSupportEnabled: 0
