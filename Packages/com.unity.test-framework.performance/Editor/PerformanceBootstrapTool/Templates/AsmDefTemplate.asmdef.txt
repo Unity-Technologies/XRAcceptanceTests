@@ -1,0 +1,9 @@
+{
+    "name": "#SCRIPTNAME#",
+	"references": [
+        "Unity.PerformanceTesting"
+	],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}
