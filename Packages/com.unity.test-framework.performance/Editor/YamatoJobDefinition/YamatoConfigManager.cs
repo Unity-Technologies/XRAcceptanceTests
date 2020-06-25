@@ -53,6 +53,7 @@ namespace YamatoJobDefinition
             yamatoTemplate = yamatoTemplate.Replace("<<FILENAME>>", definitionFileName);
             yamatoTemplate = yamatoTemplate.Replace("<<TARGET_PLATFORMS>>", definition.platforms.ToPlatformsString());
             yamatoTemplate = yamatoTemplate.Replace("<<TESTS_LOCATION>>", GetRelativeTestsPath());
+            yamatoTemplate = yamatoTemplate.Replace("<<PERFORMANCE_PROJECT_ID>>", GetProjectName());
             yamatoTemplate =
                 yamatoTemplate.Replace("<<TARGET_MODES>>", GetTargetModes(playModeTestsPath, editModeTestsPath));
 
@@ -140,6 +141,13 @@ namespace YamatoJobDefinition
         private static bool ContainsFolder(DirectoryInfo di, string folderName)
         {
             return Directory.Exists($"{di.FullName}{Path.DirectorySeparatorChar.ToString()}{folderName}");
+        }
+        
+        public static string GetProjectName()
+        {
+            string[] s = Application.dataPath.Split('/');
+            string projectName = s[s.Length - 2];
+            return projectName;
         }
     }
 }
