@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-public class RealtimeLighting_FrameRateTests
+public class CanvasTest_FrameRateTests
 {
     [UnityTest, Performance]
-    public IEnumerator RealtimeLighting_FrameRateTest()
+    public IEnumerator CanvasTest_FrameRateTest()
     {
-        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("Assets/Scenes/LightingTest/RealtimeLighting/RealtimeLighting.unity", LoadSceneMode.Single);
+        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("Assets/Scenes/CanvasTest/CanvasTest.unity", LoadSceneMode.Single);
 
         while (!asyncLoadLevel.isDone)
         {

@@ -5,15 +5,15 @@ using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-public class RealtimeLighting_MemoryUsageTests
+public class CanvasTest_MemoryUsageTests
 {
     [UnityTest, Performance]
-    public IEnumerator RealtimeLighting_MemoryUsageTest()
+    public IEnumerator CanvasTest_MemoryUsageTest()
     {
         var allocated = new SampleGroup("TotalAllocatedMemory", SampleUnit.Byte);
         var reserved = new SampleGroup("TotalReservedMemory", SampleUnit.Byte);
 		
-        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("Assets/Scenes/LightingTest/RealtimeLighting/RealtimeLighting.unity", LoadSceneMode.Single);
+        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("Assets/Scenes/CanvasTest/CanvasTest.unity", LoadSceneMode.Single);
 		
         while (!asyncLoadLevel.isDone)
         {

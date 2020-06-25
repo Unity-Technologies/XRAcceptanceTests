@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-public class RealtimeLighting_MeasureScopeTests
+public class CanvasTest_MeasureScopeTests
 {
 	[UnityTest, Performance]
-	public IEnumerator RealtimeLighting_MeasureScopeTest()
+	public IEnumerator CanvasTest_MeasureScopeTest()
 	{
-		AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("Assets/Scenes/LightingTest/RealtimeLighting/RealtimeLighting.unity", LoadSceneMode.Single);
+		AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("Assets/Scenes/CanvasTest/CanvasTest.unity", LoadSceneMode.Single);
 
 		while (!asyncLoadLevel.isDone)
 		{

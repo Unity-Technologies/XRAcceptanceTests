@@ -11,7 +11,9 @@ namespace YamatoJobDefinition
         private static string GitFolderName = ".git";
         private static string YamatoFolderName = ".yamato";
         private static string sep = Path.DirectorySeparatorChar.ToString();
-        private static string _templatePath = $"Packages{sep}com.unity.test-framework.performance{sep}Editor{sep}YamatoJobDefinition{sep}Templates{sep}template.yml";
+
+        private static string _templatePath =
+            $"Packages{sep}com.unity.test-framework.performance{sep}Editor{sep}YamatoJobDefinition{sep}Templates{sep}template.yml";
 
         public static bool YamatoJobDefinitionFolderExists()
         {
@@ -43,13 +45,16 @@ namespace YamatoJobDefinition
             string editModeTestsPath)
         {
             var yamatoTemplate = File.ReadAllText(Path.GetFullPath(_templatePath));
-            var definitionFileName = definition.fileName.EndsWith(".yml") ? definition.fileName : $"{definition.fileName}.yml";
-            
+            var definitionFileName = definition.fileName.EndsWith(".yml")
+                ? definition.fileName
+                : $"{definition.fileName}.yml";
+
             yamatoTemplate = yamatoTemplate.Replace("<<UNITY_VERSION>>", definition.unityVersion);
             yamatoTemplate = yamatoTemplate.Replace("<<FILENAME>>", definitionFileName);
             yamatoTemplate = yamatoTemplate.Replace("<<TARGET_PLATFORMS>>", definition.platforms.ToPlatformsString());
             yamatoTemplate = yamatoTemplate.Replace("<<TESTS_LOCATION>>", GetRelativeTestsPath());
-            yamatoTemplate = yamatoTemplate.Replace("<<TARGET_MODES>>", GetTargetModes(playModeTestsPath, editModeTestsPath));
+            yamatoTemplate =
+                yamatoTemplate.Replace("<<TARGET_MODES>>", GetTargetModes(playModeTestsPath, editModeTestsPath));
 
             var yamatoJobDefinitionFolder = CreateYamatoJobDefinitionFolder();
 
@@ -62,6 +67,11 @@ namespace YamatoJobDefinition
             var di = new DirectoryInfo(Directory.GetCurrentDirectory());
             var root = new DirectoryInfo(GetProjectRoot());
             var testsRelativePath = di.Name;
+            if (di.Name.Equals(root.Name))
+            {
+                return ".";
+            }
+
             while (di.Parent != null && !di.Parent.Name.Equals(root.Name))
             {
                 di = di.Parent;
@@ -83,12 +93,7 @@ namespace YamatoJobDefinition
                 rootDirectoryFound = ContainsFolder(currentDirectory, GitFolderName);
             }
 
-            if (rootDirectoryFound)
-            {
-                return currentDirectory.FullName;
-            }
-
-            return null;
+            return rootDirectoryFound ? currentDirectory.FullName : null;
         }
 
         public static bool TestsExist(string path)
@@ -97,11 +102,11 @@ namespace YamatoJobDefinition
             {
                 return false;
             }
-            
+
             var di = new DirectoryInfo(path);
-            
+
             var asmdefFiles = di.GetFiles("*.asmdef");
-            
+
             if (asmdefFiles.Length == 0)
             {
                 return false;
@@ -123,7 +128,7 @@ namespace YamatoJobDefinition
             {
                 builder.Append("playmode ");
             }
-            
+
             if (editModeTestsExist)
             {
                 builder.Append("editor ");

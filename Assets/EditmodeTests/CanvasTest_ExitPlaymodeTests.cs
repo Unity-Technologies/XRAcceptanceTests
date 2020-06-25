@@ -4,14 +4,14 @@ using UnityEditor.SceneManagement;
 using UnityEditorInternal;
 using UnityEngine.TestTools;
 
-public class RealtimeLighting_ExitPlaymodeTests : TestWithProfilerIsolation
+public class CanvasTest_ExitPlaymodeTests : TestWithProfilerIsolation
 {
     const int k_MeasurementsCount = 5;
 
     [UnityTest, Performance]
-    public IEnumerator RealtimeLighting_ExitPlaymodeTest()
+    public IEnumerator CanvasTest_ExitPlaymodeTest()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/LightingTest/RealtimeLighting/RealtimeLighting.unity", OpenSceneMode.Single);
+        EditorSceneManager.OpenScene("Assets/Scenes/CanvasTest/CanvasTest.unity", OpenSceneMode.Single);
 
         Setup();
         yield return WaitForProfilerEnabled(5.0f);
