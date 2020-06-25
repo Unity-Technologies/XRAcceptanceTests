@@ -212,7 +212,6 @@ Remove unnecessary assembly definition
 ## [0.1.38] - 2018-9-14
 
 ### Documentation updates
-Run 5
 
 ## [0.1.36] - 2018-8-27
 
@@ -449,4 +448,4 @@ Measurement methods can now take in SampleGroup as argument.
 
 ### This is the first release of *Unity Package performancetesting*.
 
-Initial version.
+version 2
