@@ -448,4 +448,4 @@ Measurement methods can now take in SampleGroup as argument.
 
 ### This is the first release of *Unity Package performancetesting*.
 
-version 3
+version 4
