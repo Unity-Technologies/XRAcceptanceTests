@@ -90,22 +90,22 @@ Run_Player_With_Performance_Tests_{{platform.name}}:
   {% if platform.name == 'OSX' %}
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr --output utr
     - chmod +x ./utr
-    - ./utr --suite=playmode --platform=StandaloneOSX --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=auto
+    - ./utr --suite=playmode --platform=StandaloneOSX --report-performance-data --performance-project-id=xracceptancetests --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=auto
   {% endif %}
   {% if platform.name == 'Windows' %}
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr.bat --output utr.bat
-    - ./utr --suite=playmode --platform=StandaloneWindows64 --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=auto
+    - ./utr --suite=playmode --platform=StandaloneWindows64 --report-performance-data --performance-project-id=xracceptancetests --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=auto
   {% endif %}
   {% if platform.name == 'Xbox' %}
     - NetSh Advfirewall set allprofiles state off
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr.bat --output utr.bat
-    - ./utr --suite=playmode --platform=XBoxOne --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP% --device-ip=%BOKKEN_DEVICE_IP%
+    - ./utr --suite=playmode --platform=XBoxOne --report-performance-data --performance-project-id=xracceptancetests--player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP% --device-ip=%BOKKEN_DEVICE_IP%
   {% endif %}
   {% if platform.name == 'PS4' %}
     - NetSh Advfirewall set allprofiles state off
     - orbis-ctrl add %BOKKEN_DEVICE_IP%
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr.bat --output utr.bat
-    - ./utr --suite=playmode --platform=ps4 --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP%
+    - ./utr --suite=playmode --platform=ps4 --report-performance-data --performance-project-id=xracceptancetests --player-load-path=build/players --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP%
   {% endif %}
   artifacts:
     logs:
@@ -127,22 +127,22 @@ Run_Editor_With_Performance_Tests_{{platform.name}}:
   {% if platform.name == 'OSX' %}
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr --output utr
     - chmod +x ./utr
-    - ./utr --suite=editor --platform=StandaloneOSX --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --artifacts_path=build/test-results --player-connection-ip=auto
+    - ./utr --suite=editor --platform=StandaloneOSX --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=xracceptancetests --artifacts_path=build/test-results --player-connection-ip=auto
   {% endif %}
   {% if platform.name == 'Windows' %}
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr.bat --output utr.bat
-    - ./utr --suite=editor --platform=StandaloneWindows64 --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --artifacts_path=build/test-results --player-connection-ip=auto
+    - ./utr --suite=editor --platform=StandaloneWindows64 --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=xracceptancetests --artifacts_path=build/test-results --player-connection-ip=auto
   {% endif %}
   {% if platform.name == 'Xbox' %}
     - NetSh Advfirewall set allprofiles state off
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr.bat --output utr.bat
-    - ./utr --suite=editor --platform=XBoxOne --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP% --device-ip=%BOKKEN_DEVICE_IP%
+    - ./utr --suite=editor --platform=XBoxOne --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=xracceptancetests --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP% --device-ip=%BOKKEN_DEVICE_IP%
   {% endif %}
   {% if platform.name == 'PS4' %}
     - NetSh Advfirewall set allprofiles state off
     - orbis-ctrl add %BOKKEN_DEVICE_IP%
     - curl -s https://artifactory.internal.unity3d.com/core-automation/tools/utr-standalone/utr.bat --output utr.bat
-    - ./utr --suite=editor --platform=ps4 --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=ONE-CLICK-PERFORMANCE --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP%
+    - ./utr --suite=editor --platform=ps4 --editor-location=.Editor --category=Performance --testproject={{tests-project}} --report-performance-data --performance-project-id=xracceptancetests --artifacts_path=build/test-results --player-connection-ip=%BOKKEN_HOST_IP%
   {% endif %}
   artifacts:
     logs:
