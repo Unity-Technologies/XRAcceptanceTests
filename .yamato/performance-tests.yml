@@ -2,8 +2,6 @@ version: trunk
   
 filename: performance-tests.yml
 
-tests-location: .
-
 platforms:
   - name: OSX
     agent:
@@ -66,7 +64,7 @@ Build_Player_With_Performance_Tests_{{platform.name}}_{{mode}}:
     {% if platform.name == 'OSX' %}
     - chmod +x ./utr
     {% endif %}
-    - ./utr --suite={{mode}} --platform={{platform.utr-platform}} --editor-location=.Editor --category=Performance --testproject={{tests-location}} --player-save-path=build/players --artifacts_path=build/logs --build-only
+    - ./utr --suite={{mode}} --platform={{platform.utr-platform}} --editor-location=.Editor --category=Performance --testproject=. --player-save-path=build/players --artifacts_path=build/logs --build-only
   artifacts:
     players:
       paths:
