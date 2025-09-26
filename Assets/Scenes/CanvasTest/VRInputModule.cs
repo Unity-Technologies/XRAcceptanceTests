@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.VR;
+using UnityEngine.XR;
 
 [RequireComponent(typeof(VRInput))]
 [AddComponentMenu("Event/VR Input Module")]

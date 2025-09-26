@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.VR;
+using UnityEngine.XR;
 
 public class VRInput : BaseInput
 {
